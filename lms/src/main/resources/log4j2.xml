@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="10">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout>
+        <pattern>%style{%d{yyyy-MM-dd HH:mm:ss,SSS}{IST}}{Magenta} %style{[%t]}{bright,blue} %highlight{%-5level} %style{%logger{1.}}{Cyan} - %msg%n
+        </pattern>
+      </PatternLayout>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="info" includeLocation="false">
+      <AppenderRef ref="Console"/>
+    </Root>
+    <Logger name="com.harman" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+  </Loggers>
+</Configuration>
