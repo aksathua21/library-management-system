@@ -10,7 +10,7 @@ import lombok.Data;
 @Entity
 @Table(name = "STUDENT_DETAILS")
 public class Student {
-  @Id private final int studentId;
+  @Id private int studentId;
   private String name;
   private String sex;
   private Date dateOfBirth;

@@ -9,6 +9,6 @@ import lombok.Data;
 @Entity
 @Table(name = "Binding_Details")
 public class Binding {
-  @Id private final int bindingId;
+  @Id private int bindingId;
   private String bindingName;
 }

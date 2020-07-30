@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.harman.lms.LibraryManagementSystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-30T07:19:47" hostname="administrator-ThinkPad-T580" time="0.086">
+<testsuite name="com.harman.lms.LibraryManagementSystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-30T07:45:54" hostname="administrator-ThinkPad-T580" time="0.086">
   <properties/>
   <testcase name="contextLoads()" classname="com.harman.lms.LibraryManagementSystemApplicationTests" time="0.086"/>
   <system-out><![CDATA[
