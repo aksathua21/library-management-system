@@ -1,17 +1,14 @@
 package com.harman.lms.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "Binding_Details")
 public class Binding {
-  @Id
-  private final int bindingId;
+  @Id private final int bindingId;
   private String bindingName;
 }
