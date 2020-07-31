@@ -7,8 +7,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Category_Details")
-public class Category {
-  @Id private int categoryId;
-  private String categotyName;
+@Table(name = "Shelf_Details")
+public class Shelf {
+  @Id private int shelfId;
+  private String floor;
 }

@@ -13,6 +13,7 @@ public class Book {
   private String bookTitle;
   private String language;
   private int bindingId;
+  private int categotyId;
   private int noOfCopiesActual;
   private int noOfCopiesCurrent;
 }
