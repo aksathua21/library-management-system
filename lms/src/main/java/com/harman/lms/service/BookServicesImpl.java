@@ -19,4 +19,17 @@ public class BookServicesImpl implements BookServices {
   public Book save(final Book book) {
     return bookRepository.save(book);
   }
+
+  @Override
+  public Book update(final long isbn, final Book book) {
+    if (bookRepository.findById(isbn).get().getIsbn() == isbn) {
+      return bookRepository.save(book);
+    }
+    return null;
+  }
+
+  @Override
+  public void deleteById(final long isbn) {
+    bookRepository.deleteById(isbn);
+  }
 }
