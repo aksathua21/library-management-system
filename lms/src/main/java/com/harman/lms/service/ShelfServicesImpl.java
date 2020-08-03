@@ -4,7 +4,9 @@ import com.harman.lms.entity.Shelf;
 import com.harman.lms.repository.ShelfRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShelfServicesImpl implements ShelfServices {
 
   @Autowired private ShelfRepository shelfRepository;

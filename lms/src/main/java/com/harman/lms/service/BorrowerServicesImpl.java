@@ -4,7 +4,9 @@ import com.harman.lms.entity.Borrower;
 import com.harman.lms.repository.BorrowerRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BorrowerServicesImpl implements BorrowerServices {
 
   @Autowired private BorrowerRepository borrowerRepository;

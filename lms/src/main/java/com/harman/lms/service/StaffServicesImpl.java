@@ -4,7 +4,9 @@ import com.harman.lms.entity.Staff;
 import com.harman.lms.repository.StaffRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StaffServicesImpl implements StaffServices {
 
   @Autowired private StaffRepository staffRepository;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.harman.lms.LibraryManagementSystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-31T10:22:40" hostname="administrator-ThinkPad-T580" time="0.083">
+<testsuite name="com.harman.lms.LibraryManagementSystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-03T11:00:00" hostname="administrator-ThinkPad-T580" time="0.086">
   <properties/>
-  <testcase name="contextLoads()" classname="com.harman.lms.LibraryManagementSystemApplicationTests" time="0.083"/>
+  <testcase name="contextLoads()" classname="com.harman.lms.LibraryManagementSystemApplicationTests" time="0.086"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \

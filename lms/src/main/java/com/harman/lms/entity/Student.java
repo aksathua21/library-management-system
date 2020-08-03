@@ -1,6 +1,5 @@
 package com.harman.lms.entity;
 
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,7 +12,7 @@ public class Student {
   @Id private int studentId;
   private String name;
   private String sex;
-  private Date dateOfBirth;
+  private String dateOfBirth;
   private final String contactNumber;
   private final String department;
   private final int borrowerId;

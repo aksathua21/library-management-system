@@ -4,7 +4,9 @@ import com.harman.lms.entity.Binding;
 import com.harman.lms.repository.BindingRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BindingServicesImpl implements BindingServices {
 
   @Autowired private BindingRepository bindingRepository;
