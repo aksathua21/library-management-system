@@ -2,11 +2,16 @@
 <checkstyle version="8.27">
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/LibraryManagementSystemApplication.java">
 </file>
+<file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/advice/WebRestControllerAdvice.java">
+</file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/controller/BindingController.java">
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/controller/BookController.java">
+<error line="53" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/controller/BorrowerController.java">
+<error line="19" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="30" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/controller/CategoryController.java">
 </file>
@@ -26,11 +31,15 @@
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/entity/Category.java">
 </file>
+<file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/entity/ResponseMsg.java">
+</file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/entity/Shelf.java">
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/entity/Staff.java">
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/entity/Student.java">
+</file>
+<file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/exception/CustomNotFoundException.java">
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/repository/BindingRepository.java">
 </file>
@@ -57,6 +66,8 @@
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/service/BorrowerServices.java">
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/service/BorrowerServicesImpl.java">
+<error line="27" column="14" severity="error" message="Variable &apos;borrower&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="28" column="5" severity="error" message="Empty statement." source="com.puppycrawl.tools.checkstyle.checks.coding.EmptyStatementCheck"/>
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/service/CategoryServices.java">
 </file>
@@ -80,6 +91,10 @@
 <error line="18" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="/home/asathua/Project/library-management-system/lms/src/main/java/com/harman/lms/validator/BookValidator.java">
-<error line="18" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="20" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="22" column="10" severity="error" message="Variable &apos;book&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="33" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="34" column="36" severity="error" message="Parameter borrower should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="35" column="10" severity="error" message="Variable &apos;book&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
 </file>
 </checkstyle>

@@ -17,7 +17,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
   // List<Book> findByTitleIgnoreCaseContaining(String title);
 
-  /* @Query("SELECT u FROM Book u WHERE u.categoryId =:id")
-  List<Book> findAllAvailableBooksBasedOnCategory(@Param("id") int id);*/
-
+  @Query(
+      "SELECT u FROM Book u WHERE u.category.categotyName =:categotyName AND u.noOfCopiesCurrent >0")
+  List<Book> findAllAvailableBooksBasedOnCategory(@Param("categotyName") String categotyName);
 }

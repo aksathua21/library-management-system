@@ -1,29 +1,40 @@
 package com.harman.lms.controller;
 
 import com.harman.lms.entity.Borrower;
+import com.harman.lms.exception.CustomNotFoundException;
 import com.harman.lms.service.BorrowerServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.transaction.Transactional;
 
 @RequestMapping("/api")
 @RestController
 public class BorrowerController {
   @Autowired private BorrowerServices borrowerServices;
 
-  @Transactional
   @PostMapping("/borrower")
   public final Borrower issueBook(@RequestBody final Borrower borrower) {
-    return borrowerServices.issueBook(borrower);
+    System.out.println("issueBook--  BorrowerController");
+    System.out.println(borrower);
+    final Borrower obj = borrowerServices.issueBook(borrower);
+    if (obj != null) {
+      return obj;
+    }
+    throw new CustomNotFoundException("Selected Book is currently not available");
   }
 
-  @GetMapping("/test")
-  public void test() {
-    borrowerServices.issueBook(null);
+  @PutMapping("/borrower/{borrowerId}/{isbn}")
+  public Borrower returnBook(@PathVariable final int borrowerId, @PathVariable final long isbn) {
+    final Borrower borrower = borrowerServices.returnBook(borrowerId, isbn);
+    if (borrower != null) {
+      System.out.println("Inside Controller");
+      return borrower;
+    }
+    throw new CustomNotFoundException(
+        "No Book Issued with BorrowerId :" + borrowerId + " and Book ISBN:" + isbn);
   }
 }

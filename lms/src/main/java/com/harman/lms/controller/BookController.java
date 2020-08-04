@@ -1,8 +1,11 @@
 package com.harman.lms.controller;
 
 import com.harman.lms.entity.Book;
+import com.harman.lms.exception.CustomNotFoundException;
+import com.harman.lms.repository.BookRepository;
 import com.harman.lms.service.BookServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +23,7 @@ import java.util.List;
 public class BookController {
 
   @Autowired private BookServices bookServices;
+  @Autowired private BookRepository bookRepository;
 
   @GetMapping("/book")
   public List<Book> getAllBook() {
@@ -47,7 +51,18 @@ public class BookController {
   }
 
   @GetMapping("/book/availableabookbyname/{title}")
-  public List<Book> findAllAvailableBooksBasedOnNameMatch(@PathVariable final String title) {
-    return bookServices.findAllAvailableBooksBasedOnNameMatch(title);
+  public ResponseEntity<List<Book>> findAllAvailableBooksBasedOnNameMatch(
+      @PathVariable final String title) throws CustomNotFoundException {
+    final List<Book> bookList = bookServices.findAllAvailableBooksBasedOnNameMatch(title);
+    if (bookList.isEmpty()) {
+      System.out.println("Inside throw statement");
+      throw new CustomNotFoundException("No Record Found");
+    }
+    return ResponseEntity.ok(bookList);
+  }
+
+  @GetMapping("/book/category/{categotyName}")
+  public List<Book> findAvailableBookByCategory(@PathVariable final String categotyName) {
+    return bookRepository.findAllAvailableBooksBasedOnCategory(categotyName);
   }
 }
