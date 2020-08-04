@@ -2,7 +2,7 @@ package com.harman.lms.service;
 
 import com.harman.lms.entity.Borrower;
 import com.harman.lms.repository.BorrowerRepository;
-import java.util.List;
+import com.harman.lms.validator.BookValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,27 +10,16 @@ import org.springframework.stereotype.Service;
 public class BorrowerServicesImpl implements BorrowerServices {
 
   @Autowired private BorrowerRepository borrowerRepository;
+  @Autowired private BookValidator bookValidator;
+
 
   @Override
-  public List<Borrower> getAllBorrowers() {
-    return borrowerRepository.findAll();
+  public Borrower issueBook(final Borrower borrower) {
+    return borrowerRepository.save(bookValidator.bookValidation(borrower));
   }
 
   @Override
-  public Borrower save(final Borrower borrower) {
-    return borrowerRepository.save(borrower);
-  }
-
-  @Override
-  public Borrower update(final int id, final Borrower borrower) {
-    if (borrowerRepository.findById(id).get().getBorrowerId() == id) {
-      return borrowerRepository.save(borrower);
-    }
+  public Borrower returnBook(final Borrower borrower) {
     return null;
-  }
-
-  @Override
-  public void deleteById(final int id) {
-    borrowerRepository.deleteById(id);
   }
 }

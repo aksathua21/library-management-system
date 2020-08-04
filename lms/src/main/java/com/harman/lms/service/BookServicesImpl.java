@@ -2,9 +2,10 @@ package com.harman.lms.service;
 
 import com.harman.lms.entity.Book;
 import com.harman.lms.repository.BookRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookServicesImpl implements BookServices {
@@ -31,5 +32,16 @@ public class BookServicesImpl implements BookServices {
   @Override
   public void deleteById(final long isbn) {
     bookRepository.deleteById(isbn);
+  }
+
+  @Override
+  public List<Book> findAllAvailableBooksBasedOnNameMatch(final String title) {
+    return bookRepository.findAllAvailableBooksBasedOnNameMatch(title);
+  }
+
+  @Override
+  public int findAllAvailableBooksBasedOnIsbn(final long isbn) {
+    System.out.println("inside findAllAvailableBooksBasedOnIsbn");
+    return bookRepository.stockByIsbn(isbn);
   }
 }
