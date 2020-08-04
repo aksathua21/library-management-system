@@ -10,5 +10,6 @@ import lombok.Data;
 @Table(name = "Category_Details")
 public class Category {
   @Id private int categoryId;
+
   private String categotyName;
 }

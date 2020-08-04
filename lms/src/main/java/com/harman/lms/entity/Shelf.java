@@ -10,5 +10,6 @@ import lombok.Data;
 @Table(name = "Shelf_Details")
 public class Shelf {
   @Id private int shelfId;
+
   private String floor;
 }
