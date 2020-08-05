@@ -8,8 +8,6 @@ import com.harman.lms.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @Component
 public class BookValidator {
 
@@ -17,7 +15,6 @@ public class BookValidator {
   @Autowired private Utility utility;
   @Autowired private BorrowerRepository borrowerRepository;
 
-  @Transactional
   public Borrower createValidation(final Borrower borrower) {
     Book book = bookRepository.findById(borrower.getIsbn()).get();
     if (borrower != null && book.getNoOfCopiesCurrent() != 0) {
@@ -30,7 +27,6 @@ public class BookValidator {
     return null;
   }
 
-  @Transactional
   public Borrower returnValidation(Borrower borrower) {
     Book book = bookRepository.findById(borrower.getIsbn()).get();
     if (borrower.getActualReturnDate() == null

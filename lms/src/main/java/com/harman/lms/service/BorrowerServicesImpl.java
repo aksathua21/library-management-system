@@ -6,7 +6,10 @@ import com.harman.lms.validator.BookValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 public class BorrowerServicesImpl implements BorrowerServices {
 
   @Autowired private BorrowerRepository borrowerRepository;
@@ -25,7 +28,6 @@ public class BorrowerServicesImpl implements BorrowerServices {
   @Override
   public Borrower returnBook(final int borrowerId, final long isbn) {
     Borrower borrower = borrowerRepository.findBorrowerDetails(borrowerId, isbn);
-    ;
     if (borrower != null) {
       System.out.println("if (borrower != null)");
       return bookValidator.returnValidation(borrower);
