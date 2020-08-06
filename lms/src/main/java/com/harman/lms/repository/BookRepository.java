@@ -20,4 +20,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
   @Query(
       "SELECT u FROM Book u WHERE u.category.categotyName =:categotyName AND u.noOfCopiesCurrent >0")
   List<Book> findAllAvailableBooksBasedOnCategory(@Param("categotyName") String categotyName);
+
 }
